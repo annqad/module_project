@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+    <div class="circles">
+        <div class="circle">100</div>
+        <div class="circle">50</div>
+        <div class="circle">100</div>
+        <div class="circle">200</div>
+        <div class="circle">50</div>
+        <div class="circle">1000</div>
+        <div class="circle">50</div>
+        <div class="circle">0</div>
+        <div class="circle">50</div>
+        <div class="circle">100</div>
+        <div class="circle">500</div>
+        <div class="circle">100</div>
+        <button class="spin">CLICK ME</button>
+    </div>
+    <div class="account">
+        <div class="balance">Balance: <span id="pointsAmount"></span></div>
+        <div class="spins">Spins: <span id="spinsAmount"></span></div>
+        <button type="button" id="openWindow">Get more spins</button>
+
+    </div>
+    <div id="modalWindow" class="modalWindow">
+        <div class="window">
+            <div id="closeModal" class="closeModal"></div>
+            <div class="price">you will pay <span id="priceAmount">0</span> points</div>
+            <input class="value" id="number" type="number" min="0" value="0" />
+            <div class="buttons">
+                <button class="regButton" id="minusButton" type="button">-</button>
+                <button class="regButton" id="plusButton" type="button">+</button>
+            </div>
+            <button class="buyButton" id="buyButton" type="button">buy</button>
+        </div>
+    </div>
+</body>
+<script src=" ./index.js"></script>
+
+</html>

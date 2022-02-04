@@ -1,0 +1,325 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Mulish', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+    background: rgb(205, 228, 250);
+}
+
+.circles {
+    height: 600px;
+    width: 600px;
+    border-radius: 50%;
+    background-color: rgb(174, 174, 231);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background: lightskyblue;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    border: solid;
+    border-color: rgb(58, 6, 126);
+}
+
+.circle.active {
+    background: #fff;
+    border: none;
+}
+
+.circle.active:before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    height: inherit;
+    width: inherit;
+    border-radius: 50%;
+    /* z-index: -1; */
+    box-shadow: 0px 0px 15px #fff;
+}
+
+.circle:nth-child(1) {
+    top: 0px;
+    right: calc(100%/6);
+}
+
+.circle:nth-child(2) {
+    top: 100px;
+    right: 0px;
+}
+
+.circle:nth-child(3) {
+    top: calc(50% - 50px);
+    right: -50px;
+}
+
+.circle:nth-child(4) {
+    bottom: 100px;
+    right: 0px;
+}
+
+.circle:nth-child(5) {
+    right: calc(100%/6);
+    bottom: 0px;
+}
+
+.circle:nth-child(6) {
+    bottom: -50px;
+    left: calc(50% - 50px);
+}
+
+.circle:nth-child(7) {
+    left: calc(100%/6);
+    bottom: 0px;
+}
+
+.circle:nth-child(8) {
+    bottom: 100px;
+    left: 0px;
+}
+
+.circle:nth-child(9) {
+    top: calc(50% - 50px);
+    left: -50px;
+}
+
+.circle:nth-child(10) {
+    top: 100px;
+    left: 0px;
+}
+
+.circle:nth-child(11) {
+    top: 0px;
+    left: calc(100%/6);
+}
+
+.circle:nth-child(12) {
+    top: -50px;
+    left: calc(50% - 50px);
+}
+
+/* BUTTON START */
+button.spin:before, button.spin:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+button.spin {
+    display: block;
+    position: relative;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    font-size: 1vw;
+    transition: all 250ms ease-out;
+    font-weight: bold;
+}
+
+button.spin:hover {
+    /* color: rgba(255, 255, 255, 1); */
+    transform: scale(0.9);
+}
+
+button.spin:before {
+    content: '';
+    background: rgba(255, 0, 0, 0.4);
+    transform: scale(0.1);
+    transition: all 250ms ease-out;
+}
+
+button.spin:after {
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    content: '';
+    cursor: pointer;
+    line-height: 100px;
+    font-size: 3em;
+    color: rgba(255, 255, 255, 1);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+    background: rgba(153, 78, 223, 0.657);
+    box-shadow: 0 0 0px 3px rgba(0, 0, 0, 0.3);
+    transition: all 250ms ease-out;
+}
+
+button.spin:hover:before {
+    transform: scale(0.9);
+}
+
+button.spin:hover:after {
+    transform: scale(0.9);
+    box-shadow: 0 0 10px 10px rgba(30, 28, 28, 0.43) inset;
+}
+
+/* BUTTON END */
+
+.account {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
+
+#number::-webkit-outer-spin-button,
+#number::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+#number[type=number] {
+    -moz-appearance: textfield;
+}
+
+.account {
+    margin-top: 20px;
+    right: 20px;
+    height: 40px;
+    width: 200px;
+    font-family: 'Mulish', sans-serif;
+    font-size: 20px;
+    color: rgb(46, 39, 46);
+}
+
+#openWindow {
+    height: 40px;
+    width: 100px;
+    border-radius: 10px;
+    border: solid;
+    text-transform: uppercase;
+    color: rgb(103, 36, 190);
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.modalWindow {
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.modalWindow.opened {
+    display: flex;
+}
+
+.window {
+    height: 400px;
+    width: 500px;
+    background: rgb(188, 205, 238);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-radius: 20px;
+    border: solid;
+
+}
+
+.buttons {
+    display: flex;
+    width: 150px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    justify-content: space-between;
+}
+
+.regButton {
+    height: 50px;
+    width: 50px;
+    border-radius: 20%;
+    border: solid;
+    border-color: cornsilk;
+    background: rgb(174, 174, 231);
+    font-size: xx-large;
+    color: white;
+    cursor: pointer;
+
+}
+
+.value {
+    height: 50px;
+    width: 200px;
+    background: white;
+    font-size: xx-large;
+    border: solid;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.price {
+    margin-bottom: 20px;
+    font-size: xx-large;
+    text-transform: uppercase;
+    color: rgb(105, 92, 92);
+    font-family: 'Mulish', sans-serif;
+}
+
+.buyButton {
+    font-family: 'Mulish', sans-serif;
+    height: 40px;
+    width: 70px;
+    text-transform: uppercase;
+    border-radius: 10px;
+    background: white;
+    border: solid;
+    font-weight: bold;
+    cursor: pointer;
+
+}
+
+.closeModal {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 24px;
+    height: 24px;
+    opacity: 0.2;
+    cursor: pointer;
+    transition: opacity ease 0.5s;
+}
+
+.closeModal:hover {
+    opacity: 1;
+}
+
+.closeModal::before,
+.closeModal::after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    display: block;
+    width: 24px;
+    height: 3px;
+    background: #000;
+}
+
+.closeModal::before {
+    transform: rotate(45deg);
+}
+
+.closeModal::after {
+    transform: rotate(-45deg);
+}
